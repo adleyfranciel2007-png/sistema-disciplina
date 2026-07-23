@@ -36,6 +36,27 @@ Depois de publicado:
 
 Isso cria um ícone que abre o app em tela cheia, como um app nativo.
 
+## O que mudou nessa versão
+
+- Código reorganizado em módulos (`src/lib/`, `src/components/`) em vez de um arquivo só.
+- Editar itens de estudo/treino sem precisar apagar e recriar.
+- Confirmação antes de excluir qualquer item ou alarme.
+- Aba **Progresso**: gráfico de conclusão de estudos/treinos dos últimos 7 dias.
+- Aba **Corpo**: cálculo de calorias mais preciso (fórmula de Mifflin-St Jeor, usando idade/sexo/nível de atividade), além de um histórico de peso com gráfico.
+- Aba **Config**: personalize o XP por missão, XP da meta de água, e a fórmula de água (ml por kg).
+- Tutorial de boas-vindas na primeira abertura.
+- Avisos na tela se o salvamento dos dados falhar (em vez de falhar silenciosamente).
+- Ícones reais do app para quando for instalado na tela inicial.
+
+## Próximo passo (fora do escopo deste pacote): sincronização em nuvem e notificações reais
+
+Hoje os dados ficam só no navegador (`localStorage`) e os alarmes só tocam com a aba aberta.
+Para ter sincronização entre celular/computador e notificações reais de alarme (com o
+celular travado), o caminho é integrar um backend como o [Supabase](https://supabase.com)
+(gratuito) — banco de dados + autenticação — e configurar Web Push com Service Worker.
+Isso exige que você crie sua própria conta e chaves de API, então não dá pra deixar pronto
+sem isso. Quando quiser seguir com essa parte, é só pedir que eu te guio passo a passo.
+
 ## Observações
 
 - Os dados (peso, alarmes, estudos, treinos, progresso) ficam salvos no
